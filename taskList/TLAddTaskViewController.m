@@ -27,6 +27,28 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.taskNameTextField.delegate = self;
+    self.taskDescriptionTextView.delegate = self;
+}
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
+{
+    if ([text isEqualToString:@"\n"]) {
+        [self.taskDescriptionTextView resignFirstResponder];
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
+-(BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if ([string isEqualToString:@"\n"]) {
+        [self.taskNameTextField resignFirstResponder];
+        return NO;
+    }
+    else{
+        return YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,23 +58,23 @@
 }
 
 - (IBAction)cancelButtonPressed:(id)sender {
-    NSLog(@"Cancel button pressed");
     [self.delegate didCancel];
 }
 
 - (IBAction)addButtonPressed:(id)sender {
+    //TODO: test to make sure user has entered information
     [self.delegate didAddTask:[self returnTask]];
-}
-#pragma helper methods
--(TLTask *)returnTask
-{
-    
-    TLTask *task = [[TLTask alloc]init];
-    task.name = self.taskNameTextField.text;
-    task.description = self.taskDescriptionTextView.text;
-    task.date = self.datePicker.date;
-    
-    return task;
+
 }
 
+#pragma mark helper methods
+-(TLTask *)returnTask
+{
+    TLTask *task = [[TLTask alloc]init];
+    task.title = self.taskNameTextField.text;
+    task.description = self.taskDescriptionTextView.text;
+    task.date = self.datePicker.date;
+    task.completed = NO;
+    return task;
+}
 @end

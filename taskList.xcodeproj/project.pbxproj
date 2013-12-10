@@ -24,7 +24,6 @@
 		C4A68AE81853D42D0095A1E6 /* TLAddTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A68AE71853D42D0095A1E6 /* TLAddTaskViewController.m */; };
 		C4A68AEB1853D43B0095A1E6 /* TLDetailTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A68AEA1853D43B0095A1E6 /* TLDetailTaskViewController.m */; };
 		C4A68AEE1853D44B0095A1E6 /* TLEditTaskViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A68AED1853D44B0095A1E6 /* TLEditTaskViewController.m */; };
-		C4A68AF21853DF4D0095A1E6 /* TLTaskModel.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A68AF11853DF4D0095A1E6 /* TLTaskModel.m */; };
 		C4A68AF51853EF200095A1E6 /* TLTask.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A68AF41853EF200095A1E6 /* TLTask.m */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +63,6 @@
 		C4A68AEA1853D43B0095A1E6 /* TLDetailTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLDetailTaskViewController.m; sourceTree = "<group>"; };
 		C4A68AEC1853D44B0095A1E6 /* TLEditTaskViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLEditTaskViewController.h; sourceTree = "<group>"; };
 		C4A68AED1853D44B0095A1E6 /* TLEditTaskViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLEditTaskViewController.m; sourceTree = "<group>"; };
-		C4A68AF01853DF4D0095A1E6 /* TLTaskModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTaskModel.h; sourceTree = "<group>"; };
-		C4A68AF11853DF4D0095A1E6 /* TLTaskModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTaskModel.m; sourceTree = "<group>"; };
 		C4A68AF31853EF200095A1E6 /* TLTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLTask.h; sourceTree = "<group>"; };
 		C4A68AF41853EF200095A1E6 /* TLTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLTask.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -185,8 +182,6 @@
 		C4A68AEF1853DF2A0095A1E6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				C4A68AF01853DF4D0095A1E6 /* TLTaskModel.h */,
-				C4A68AF11853DF4D0095A1E6 /* TLTaskModel.m */,
 				C4A68AF31853EF200095A1E6 /* TLTask.h */,
 				C4A68AF41853EF200095A1E6 /* TLTask.m */,
 			);
@@ -294,7 +289,6 @@
 				C4A68AC71853D28A0095A1E6 /* TLViewController.m in Sources */,
 				C4A68AC11853D28A0095A1E6 /* TLAppDelegate.m in Sources */,
 				C4A68AEB1853D43B0095A1E6 /* TLDetailTaskViewController.m in Sources */,
-				C4A68AF21853DF4D0095A1E6 /* TLTaskModel.m in Sources */,
 				C4A68ABD1853D28A0095A1E6 /* main.m in Sources */,
 				C4A68AE81853D42D0095A1E6 /* TLAddTaskViewController.m in Sources */,
 				C4A68AF51853EF200095A1E6 /* TLTask.m in Sources */,
@@ -507,6 +501,7 @@
 				C4A68AE11853D28A0095A1E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C4A68AE21853D28A0095A1E6 /* Build configuration list for PBXNativeTarget "taskListTests" */ = {
 			isa = XCConfigurationList;
@@ -515,6 +510,7 @@
 				C4A68AE41853D28A0095A1E6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

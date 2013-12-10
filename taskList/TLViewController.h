@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "TLAddTaskViewController.h"
 
-@interface TLViewController : UIViewController <TLAddTaskDelegate>
+@interface TLViewController : UIViewController <TLAddTaskDelegate,UITableViewDataSource,UITableViewDelegate>
+
+@property(strong,nonatomic) NSMutableArray *taskObjectsArray;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 - (IBAction)reorderButtonPressed:(id)sender;
 - (IBAction)addButtonPressed:(id)sender;

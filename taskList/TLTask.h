@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 @interface TLTask : NSObject
-@property (strong, nonatomic) NSString *name;
+@property (strong, nonatomic) NSString *title;
 @property (strong, nonatomic) NSString *description;
 @property (strong, nonatomic) NSDate *date;
+@property (nonatomic) BOOL completed;
+
+-(id)initWithData:(NSDictionary *)data;
 
 @end

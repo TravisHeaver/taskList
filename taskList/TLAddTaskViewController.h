@@ -13,7 +13,7 @@
 -(void)didAddTask:(TLTask *)task;
 @end
 
-@interface TLAddTaskViewController : UIViewController
+@interface TLAddTaskViewController : UIViewController <UITextFieldDelegate,UITextViewDelegate>
 
 @property (weak, nonatomic) id <TLAddTaskDelegate> delegate;
 
