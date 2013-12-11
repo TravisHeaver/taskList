@@ -9,6 +9,7 @@
 #import "TLViewController.h"
 #import "TLTask.h"
 #import "TLAddTaskViewController.h"
+#import "TLDetailTaskViewController.h"
 
 
 @interface TLViewController ()
@@ -92,6 +93,11 @@
     
     [self didAddTask:taskAtIndex];
 }
+-(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
+{
+    self.taskToSend = self.taskObjectsArray[indexPath.row];
+    [self performSegueWithIdentifier:@"viewControllerToDetailTaskSegue" sender:tableView];
+}
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return YES;
@@ -127,7 +133,6 @@
 
 - (IBAction)addButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"viewControllerToAddTaskSegue" sender:sender];
-    
 }
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
@@ -136,6 +141,16 @@
             //add button was pressed - heading to add task view controller
             TLAddTaskViewController *nextViewController = segue.destinationViewController;
             nextViewController.delegate = self;
+        }
+    }
+    
+    if ([sender isKindOfClass: [UITableView class]]) {
+        if ([segue.destinationViewController isKindOfClass: [TLDetailTaskViewController class]])
+        {
+            //information button was pressed - heading to details
+            TLDetailTaskViewController *nextViewController = segue.destinationViewController;
+            nextViewController.delegate = self;
+            nextViewController.taskDetail = self.taskToSend;
         }
     }
 }
@@ -161,6 +176,11 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
     [self.tableView reloadData];
 }
+-(void)returnFromDetail
+{
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 #pragma mark helper methods
 -(NSDictionary *)taskObjectAsPropertyList: (TLTask *)taskObject
 {

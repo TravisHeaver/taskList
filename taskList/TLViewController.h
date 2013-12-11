@@ -8,11 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "TLAddTaskViewController.h"
+#import "TLDetailTaskViewController.h"
 
-@interface TLViewController : UIViewController <TLAddTaskDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface TLViewController : UIViewController <TLAddTaskDelegate,UITableViewDataSource,UITableViewDelegate, TLDetailTaskDelegate>
 
 @property(strong,nonatomic) NSMutableArray *taskObjectsArray;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) TLTask *taskToSend;
 
 - (IBAction)reorderButtonPressed:(id)sender;
 - (IBAction)addButtonPressed:(id)sender;
