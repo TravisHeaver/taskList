@@ -53,7 +53,7 @@
                     <navigationItem key="navigationItem" id="Y5T-ec-yNG">
                         <barButtonItem key="leftBarButtonItem" title="Reorder" id="j5t-NF-72T">
                             <connections>
-                                <action selector="reorderButtonPressed:" destination="vXZ-lx-hvc" id="gwc-Fg-jKo"/>
+                                <action selector="reorderBarButtonPressed:" destination="vXZ-lx-hvc" id="Hmg-UQ-rIv"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="gbO-nI-RRG">

@@ -128,8 +128,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)reorderButtonPressed:(id)sender {
+- (IBAction)reorderBarButtonPressed:(id)sender {
+    if (self.tableView.editing == YES)
+    {
+        [self.tableView setEditing:NO animated:YES];
+    }
+    else
+    {
+        [self.tableView setEditing:YES animated:YES];
+    }
 }
+-(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+{
+    TLTask *taskObjectToMove = [self.taskObjectsArray objectAtIndex:sourceIndexPath.row];
+    [self.taskObjectsArray removeObjectAtIndex:sourceIndexPath.row];
+    [self.taskObjectsArray insertObject:taskObjectToMove atIndex:destinationIndexPath.row];
+}
+
 
 - (IBAction)addButtonPressed:(id)sender {
     [self performSegueWithIdentifier:@"viewControllerToAddTaskSegue" sender:sender];

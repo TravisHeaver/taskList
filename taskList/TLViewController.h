@@ -17,7 +17,7 @@
 
 @property (strong, nonatomic) TLTask *taskToSend;
 
-- (IBAction)reorderButtonPressed:(id)sender;
+- (IBAction)reorderBarButtonPressed:(id)sender;
 - (IBAction)addButtonPressed:(id)sender;
 
 @end
