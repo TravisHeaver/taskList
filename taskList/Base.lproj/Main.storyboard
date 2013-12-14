@@ -129,8 +129,17 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="i4C-T5-14f">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="kPL-0j-1BD"/>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="kPL-0j-1BD">
+                            <connections>
+                                <action selector="saveBarButtonPressed:" destination="HCT-xV-NXq" id="85D-x0-mMl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="taskDatePicker" destination="bad-UF-MFC" id="qjj-2c-ZPJ"/>
+                        <outlet property="taskDescriptionTextView" destination="obf-HG-juO" id="M3t-QO-P7T"/>
+                        <outlet property="taskNameTextField" destination="njP-ww-qFb" id="bYD-A0-TZq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcj-Pl-gz4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

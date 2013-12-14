@@ -96,6 +96,7 @@
 -(void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
     self.taskToSend = self.taskObjectsArray[indexPath.row];
+    
     [self performSegueWithIdentifier:@"viewControllerToDetailTaskSegue" sender:tableView];
 }
 -(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -220,7 +221,23 @@
         return YES;
     }
     else return NO;
-    
+}
+-(void)saveTasks
+{
+    //create a new ordered array of "tasks" (NSDictionaries)
+    NSMutableArray *newListOrder = [[NSMutableArray alloc] init];
+    for (TLTask *task in self.taskObjectsArray) {
+        [newListOrder addObject:[self taskObjectAsPropertyList:task]];
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:newListOrder forKey:TASK_OBJECT_ARRAY];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
+#pragma mark TLDetailTask delegates
+-(void)updateTask
+{
+    [self saveTasks];
+    [self.tableView reloadData];
 }
 
 @end

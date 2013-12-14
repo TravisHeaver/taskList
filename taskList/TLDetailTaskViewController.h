@@ -8,15 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "TLTask.h"
-@protocol TLDetailTaskDelegate
+#import "TLEditTaskViewController.h"
+@protocol TLDetailTaskDelegate <NSObject>
+
+-(void)updateTask;
 -(void)returnFromDetail;
--(void)modifiedTask: (TLTask *) task;
 
 
 @end
 
 
-@interface TLDetailTaskViewController : UIViewController
+@interface TLDetailTaskViewController : UIViewController <TLEditTaskDelegate>
 
 @property (weak, nonatomic) id <TLDetailTaskDelegate> delegate;
 
